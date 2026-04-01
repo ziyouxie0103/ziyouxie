@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A modern personal website with projects, experience, and contact details."
+    />
+    <title>Ziyou Xie | Personal Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Homepage">
+          <span class="brand-mark">ZX</span>
+          <span class="brand-text">Ziyou Xie</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="images/ZiyouXie_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero section" id="about">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">You can't spell awesome without ME!</p>
+            <div class="hero-gallery" aria-label="Featured media">
+
+              <figure class="hero-photo hero-photo-traveler">
+                <img
+                  src="images/traveler1.jpg"
+                  alt="Traveler photo 1"
+                  data-rotation-sources="images/traveler1.jpg,images/traveler2.jpg,images/traveler3.JPG,images/traveler4.jpg,images/traveler5.JPG"
+                  data-rotation-alts="Traveler photo 1|Traveler photo 2|Traveler photo 3|Traveler photo 4|Traveler photo 5"
+                  data-slider-dots="true"
+                />
+                <figcaption>
+                  A Traveler
+                  <img class="hero-note-icon" src="images/traveling-icon.jpg" alt="" />
+                </figcaption>
+              </figure>
+
+              <div class="hero-note">
+                <p class="hero-note-label">
+                  Bello!
+                  <img class="hero-note-icon" src="images/bello-icon.jpg" alt="" />
+                </p>
+                <p class="hero-note-text">
+                  I'm Ziyou, a software engineer by day, a multiversion of myself at night. Meet me in my off hours:
+                </p>
+              </div>
+
+              <figure class="hero-photo hero-photo-video">
+                <video autoplay muted loop playsinline>
+                  <source src="images/snowboarding.mp4" type="video/mp4" />
+                </video>
+                <figcaption>
+                  A Snowboarder
+                  <img class="hero-note-icon" src="images/snowboarding-icon.jpg" alt="" />
+                </figcaption>
+              </figure>
+
+              <figure class="hero-photo hero-photo-video">
+                <video autoplay muted loop playsinline>
+                  <source src="images/dancing.mp4" type="video/mp4" />
+                </video>
+                <figcaption>
+                  A Dancer
+                  <img class="hero-note-icon" src="images/dancing-icon.jpg" alt="" />
+                </figcaption>
+              </figure>
+
+              <figure class="hero-photo hero-photo-video">
+                <video autoplay muted loop playsinline>
+                  <source src="images/skating.mp4" type="video/mp4" />
+                </video>
+                <figcaption>
+                  A Figure Skater (wannabe)
+                  <img class="hero-note-icon" src="images/skating-icon.jpg" alt="" />
+                </figcaption>
+              </figure>
+            </div>
+            <div class="hero-actions">
+              <a class="button button-secondary" href="#contact">Contact</a>
+            </div>
+          </div>
+
+          <aside class="hero-card reveal reveal-delay-1" aria-label="Highlights">
+            <p class="card-label">Currently</p>
+            <ul class="stat-list">
+              <li>
+                <span class="stat-title">Roles / Studies</span>
+                <span class="stat-value">
+                  Software Engineering Intern @ Google LLC<br />
+                  M.S. in Computer Science @ Carnegie Mellon University
+                </span>
+              </li>
+              <li>
+                <span class="stat-title">Based in</span>
+                <span class="stat-value">Pittsburgh, PA, USA</span>
+              </li>
+              <li>
+                <span class="stat-title">Open to</span>
+                <span class="stat-value">Full-time opportunities starting February 2027</span>
+              </li>
+            </ul>
+          </aside>
+        </section>
+
+        <section class="section timeline-section" id="experience">
+          <div class="section-heading reveal">
+            <p class="section-label">Experience</p>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item reveal">
+              <div class="timeline-year">2026</div>
+              <div class="timeline-content">
+                <h3><strong>Master of Science in Computer Science</strong> @ Carnegie Mellon University </h3>
+                <p>
+                  Courses: Distributed Systems, Parallel Computer Architecture and Programming, Cloud Computing, API Design and Implementation, Intro to Machine Learning, Database Systems, Bug Catching: Automated Program Verification
+                </p>
+                <h3><strong>Software Engineering Intern</strong> @ Google LLC </h3>
+                <p>
+                  Platforms & Devices Home PushService, C++ Infrastructure & Systems
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-item reveal reveal-delay-1">
+              <div class="timeline-year">2025</div>
+              <div class="timeline-content">
+                <h3><strong>Bachelor of Science in Computer Science</strong> @ University of Michigan-Ann Arbor</h3>
+                <p>
+                  Courses: Advanced Operating Systems, Web Systems, Computer Security, Software Engineering, Data Structures and Algorithms, Computer Organization
+                </p>
+                <div class="timeline-media">
+                  <img src="images/umich1.jpg" alt="University of Michigan photo 1" />
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-item reveal reveal-delay-2">
+              <div class="timeline-year">2024</div>
+              <div class="timeline-content">
+                <h3><strong>Ordered Systems Lab</strong> @ University of Michigan-Ann Arbor</h3>
+                <p>
+                  Built an automated data tracing and runtime system for Redis and Postgres, capturing workload metrics with minimal overhead. Trained a Decision Tree model to predict optimal memory settings (pre-allocated & THP) with 95% accuracy, achieving a 21.7% average latency reduction across benchmarks.
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-item reveal reveal-delay-3">
+              <div class="timeline-year">2023</div>
+              <div class="timeline-content">
+                <h3><strong>Backend Developer Intern</strong> @ Vanke</h3>
+                <p>
+                  Integrated the admin database into the company portal and built an optimized keyword search for instant access to 10K+ records. Automated daily customer feedback collection and reporting with Python, cutting response time from ~60 minutes to 2 seconds.
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-item reveal reveal-delay-4">
+              <div class="timeline-year">2021</div>
+              <div class="timeline-content">
+                <h3><strong>Computer Science & Statistics Undergraduate</strong> @ University of Wisconsin-Madison</h3>
+                <p>
+                  Courses: Computer Engineering, Java Programming I II III, R for Statistics, Applied Regression Analysis, Statistical Experimental Design, Probability and Mathematical Statistics
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+          <div class="contact-panel reveal">
+            <p class="contact-heading">Contact</p>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:ziyouxie.work@gmail.com">
+                <span class="contact-link-label">Email</span>
+                <span class="contact-link-value">ziyouxie.work@gmail.com</span>
+              </a>
+              <a class="contact-link" href="https://www.linkedin.com/in/ziyouxie/" target="_blank" rel="noreferrer">
+                <span class="contact-link-label">LinkedIn</span>
+                <span class="contact-link-value">linkedin.com/in/ziyouxie</span>
+              </a>
+              <a class="contact-link" href="https://github.com/ziyouxie0103" target="_blank" rel="noreferrer">
+                <span class="contact-link-label">GitHub</span>
+                <span class="contact-link-value">github.com/ziyouxie0103</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© <span id="year"></span> Ziyou Xie</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
