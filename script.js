@@ -92,6 +92,29 @@ rotatingImages.forEach((image) => {
   let dots = [];
   let touchStartX = 0;
   let touchDeltaX = 0;
+  const loadedSources = new Set([image.currentSrc || image.src]);
+
+  const preloadSource = (source) =>
+    new Promise((resolve) => {
+      if (loadedSources.has(source)) {
+        resolve();
+        return;
+      }
+
+      const preloader = new Image();
+      preloader.onload = () => {
+        loadedSources.add(source);
+        resolve();
+      };
+      preloader.onerror = () => resolve();
+      preloader.src = source;
+    });
+
+  sources.forEach((source, index) => {
+    if (index !== currentIndex) {
+      preloadSource(source);
+    }
+  });
 
   const syncDots = () => {
     dots.forEach((dot, index) => {
@@ -111,10 +134,12 @@ rotatingImages.forEach((image) => {
     syncDots();
   };
 
-  const transitionTo = (nextIndex) => {
+  const transitionTo = async (nextIndex) => {
     if (nextIndex === currentIndex) {
       return;
     }
+
+    await preloadSource(sources[nextIndex]);
 
     if (prefersReducedMotion.matches) {
       applyImage(nextIndex);
