@@ -56,19 +56,24 @@
                   data-slider-dots="true"
                 />
                 <figcaption>
-                  A Traveler
                   <img class="hero-note-icon" src="images/traveling-icon.jpg" alt="" />
+                  <span>A Traveler</span>
                 </figcaption>
               </figure>
 
-              <div class="hero-note">
-                <p class="hero-note-label">
-                  Bello!
-                  <img class="hero-note-icon" src="images/bello-icon.jpg" alt="" />
-                </p>
-                <p class="hero-note-text">
-                  I'm Ziyou, a software engineer by day, a multiversion of myself at night. Meet me in my off hours:
-                </p>
+              <div class="hero-note-stack">
+                <div class="hero-note">
+                  <p class="hero-note-label">
+                    Bello!
+                    <img class="hero-note-icon" src="images/bello-icon.jpg" alt="" />
+                  </p>
+                  <p class="hero-note-text">
+                    I'm Ziyou, a software engineer by day, a multiversion of myself at night. Meet me in my off hours:
+                  </p>
+                </div>
+                <div class="hero-actions">
+                  <a class="button button-secondary" href="#contact">Contact</a>
+                </div>
               </div>
 
               <figure class="hero-photo hero-photo-video">
@@ -76,8 +81,8 @@
                   <source src="images/snowboarding.mp4" type="video/mp4" />
                 </video>
                 <figcaption>
-                  A Snowboarder
                   <img class="hero-note-icon" src="images/snowboarding-icon.jpg" alt="" />
+                  <span>A Snowboarder</span>
                 </figcaption>
               </figure>
 
@@ -86,8 +91,8 @@
                   <source src="images/dancing.mp4" type="video/mp4" />
                 </video>
                 <figcaption>
-                  A Dancer
                   <img class="hero-note-icon" src="images/dancing-icon.jpg" alt="" />
+                  <span>A Dancer</span>
                 </figcaption>
               </figure>
 
@@ -96,13 +101,10 @@
                   <source src="images/skating.mp4" type="video/mp4" />
                 </video>
                 <figcaption>
-                  A Figure Skater (wannabe)
                   <img class="hero-note-icon" src="images/skating-icon.jpg" alt="" />
+                  <span>A Figure Skater (wannabe)</span>
                 </figcaption>
               </figure>
-            </div>
-            <div class="hero-actions">
-              <a class="button button-secondary" href="#contact">Contact</a>
             </div>
           </div>
 
@@ -112,8 +114,8 @@
               <li>
                 <span class="stat-title">Roles / Studies</span>
                 <span class="stat-value">
-                  Software Engineering Intern @ Google LLC<br />
-                  M.S. in Computer Science @ Carnegie Mellon University
+                  <span class="stat-value-line">Software Engineering Intern @ Google LLC <img class="stat-inline-icon stat-inline-icon-small" src="images/google.jpg" alt="Google icon" /></span>
+                  <span class="stat-value-line">M.S. in Computer Science @ Carnegie Mellon University <img class="stat-inline-icon" src="images/cmu.jpg" alt="CMU icon" /></span>
                 </span>
               </li>
               <li>
@@ -137,11 +139,11 @@
             <article class="timeline-item reveal">
               <div class="timeline-year">2026</div>
               <div class="timeline-content">
-                <h3><strong>Master of Science in Computer Science</strong> @ Carnegie Mellon University </h3>
+                <h3><strong>Master of Science in Computer Science</strong> @ Carnegie Mellon University <img class="experience-inline-icon experience-inline-icon-image" src="images/cmu.jpg" alt="CMU icon" /></h3>
                 <p>
                   Courses: Distributed Systems, Parallel Computer Architecture and Programming, Cloud Computing, API Design and Implementation, Intro to Machine Learning, Database Systems, Bug Catching: Automated Program Verification
                 </p>
-                <h3><strong>Software Engineering Intern</strong> @ Google LLC </h3>
+                <h3><strong>Software Engineering Intern</strong> @ Google LLC <img class="experience-inline-icon experience-inline-icon-image experience-inline-icon-image-small" src="images/google.jpg" alt="Google icon" /></h3>
                 <p>
                   Platforms & Devices Home PushService, C++ Infrastructure & Systems
                 </p>
@@ -151,7 +153,7 @@
             <article class="timeline-item reveal reveal-delay-1">
               <div class="timeline-year">2025</div>
               <div class="timeline-content">
-                <h3><strong>Bachelor of Science in Computer Science</strong> @ University of Michigan-Ann Arbor</h3>
+                <h3><strong>Bachelor of Science in Computer Science</strong> @ University of Michigan-Ann Arbor <img class="experience-inline-icon experience-inline-icon-image" src="images/umich.jpg" alt="University of Michigan icon" /></h3>
                 <p>
                   Courses: Advanced Operating Systems, Web Systems, Computer Security, Software Engineering, Data Structures and Algorithms, Computer Organization
                 </p>
@@ -164,7 +166,7 @@
             <article class="timeline-item reveal reveal-delay-2">
               <div class="timeline-year">2024</div>
               <div class="timeline-content">
-                <h3><strong>Ordered Systems Lab</strong> @ University of Michigan-Ann Arbor</h3>
+                <h3><strong>Ordered Systems Lab</strong> @ University of Michigan-Ann Arbor <img class="experience-inline-icon experience-inline-icon-image" src="images/umich.jpg" alt="University of Michigan icon" /></h3>
                 <p>
                   Built an automated data tracing and runtime system for Redis and Postgres, capturing workload metrics with minimal overhead. Trained a Decision Tree model to predict optimal memory settings (pre-allocated & THP) with 95% accuracy, achieving a 21.7% average latency reduction across benchmarks.
                 </p>
@@ -174,7 +176,7 @@
             <article class="timeline-item reveal reveal-delay-3">
               <div class="timeline-year">2023</div>
               <div class="timeline-content">
-                <h3><strong>Backend Developer Intern</strong> @ Vanke</h3>
+                <h3><strong>Backend Developer Intern</strong> @ Vanke <img class="experience-inline-icon experience-inline-icon-image experience-inline-icon-image-small" src="images/vanke.jpg" alt="Vanke icon" /></h3>
                 <p>
                   Integrated the admin database into the company portal and built an optimized keyword search for instant access to 10K+ records. Automated daily customer feedback collection and reporting with Python, cutting response time from ~60 minutes to 2 seconds.
                 </p>
@@ -184,7 +186,7 @@
             <article class="timeline-item reveal reveal-delay-4">
               <div class="timeline-year">2021</div>
               <div class="timeline-content">
-                <h3><strong>Computer Science & Statistics Undergraduate</strong> @ University of Wisconsin-Madison</h3>
+                <h3><strong>Computer Science & Statistics Undergraduate</strong> @ University of Wisconsin-Madison <img class="experience-inline-icon experience-inline-icon-image" src="images/uwm.jpg" alt="University of Wisconsin-Madison icon" /></h3>
                 <p>
                   Courses: Computer Engineering, Java Programming I II III, R for Statistics, Applied Regression Analysis, Statistical Experimental Design, Probability and Mathematical Statistics
                 </p>
