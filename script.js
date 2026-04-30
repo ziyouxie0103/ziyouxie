@@ -46,29 +46,83 @@ if (menuToggle && siteNav) {
   });
 }
 
-const navObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      const id = `#${entry.target.id}`;
-      const link = sectionLinks.find((item) => item.getAttribute("href") === id);
+const getHeaderOffset = () => {
+  const header = document.querySelector(".site-header");
+  const headerHeight = header ? header.getBoundingClientRect().height : 0;
+  return headerHeight + 24;
+};
 
-      if (!link) {
-        return;
-      }
-
-      if (entry.isIntersecting) {
-        navLinks.forEach((item) => item.classList.remove("is-active"));
-        link.classList.add("is-active");
-      }
-    });
-  },
-  {
-    rootMargin: "-35% 0px -45% 0px",
-    threshold: 0.1
+const setActiveLink = (sectionId) => {
+  if (!sectionId) {
+    return;
   }
-);
 
-sections.forEach((section) => navObserver.observe(section));
+  const href = `#${sectionId}`;
+  const link = sectionLinks.find((item) => item.getAttribute("href") === href);
+
+  if (!link) {
+    return;
+  }
+
+  navLinks.forEach((item) => item.classList.toggle("is-active", item === link));
+};
+
+const updateActiveNav = () => {
+  if (!sections.length) {
+    return;
+  }
+
+  const offset = getHeaderOffset();
+  const scrollAnchor = offset;
+  let activeSection = sections[0];
+
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top - scrollAnchor <= 0) {
+      activeSection = section;
+    }
+  });
+
+  setActiveLink(activeSection.id);
+};
+
+let scheduledNavUpdate = false;
+const scheduleNavUpdate = () => {
+  if (scheduledNavUpdate) {
+    return;
+  }
+
+  scheduledNavUpdate = true;
+  window.requestAnimationFrame(() => {
+    scheduledNavUpdate = false;
+    updateActiveNav();
+  });
+};
+
+window.addEventListener("scroll", scheduleNavUpdate, { passive: true });
+window.addEventListener("resize", scheduleNavUpdate);
+window.addEventListener("hashchange", scheduleNavUpdate);
+window.addEventListener("load", () => {
+  scheduleNavUpdate();
+  window.setTimeout(scheduleNavUpdate, 250);
+});
+
+const navObserver =
+  "IntersectionObserver" in window
+    ? new IntersectionObserver(
+        () => {
+          scheduleNavUpdate();
+        },
+        {
+          rootMargin: `-${getHeaderOffset()}px 0px -60% 0px`,
+          threshold: [0, 0.1, 0.2, 0.35, 0.5]
+        }
+      )
+    : null;
+
+if (navObserver) {
+  sections.forEach((section) => navObserver.observe(section));
+}
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 

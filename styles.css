@@ -193,7 +193,7 @@ img {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-areas:
     "traveler traveler note"
-    "video-1 video-2 video-3";
+    "traveler traveler videos";
   gap: 1rem;
   margin-top: 1.25rem;
   align-items: start;
@@ -227,8 +227,8 @@ img {
   grid-area: note;
   display: grid;
   gap: 0.9rem;
-  justify-self: start;
-  transform: translate(-160px, 200px);
+  justify-self: center;
+  transform: translate(-160px, 64px);
 }
 
 .hero-note-label {
@@ -250,6 +250,11 @@ img {
   border-radius: 999px;
 }
 
+.hero-photo figcaption .hero-note-icon {
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
 .hero-note-text {
   margin: 0;
   color: var(--text-soft);
@@ -257,16 +262,41 @@ img {
   font-size: 1.06rem;
 }
 
-.hero-photo-video:nth-of-type(2) {
-  grid-area: video-1;
+.hero-video-panel {
+  grid-area: videos;
+  display: grid;
+  gap: 0.7rem;
+  justify-self: center;
+  width: fit-content;
+  transform: translate(-160px, 0);
 }
 
-.hero-photo-video:nth-of-type(3) {
-  grid-area: video-2;
+.hero-video-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.85rem;
+  justify-content: center;
 }
 
-.hero-photo-video:nth-of-type(4) {
-  grid-area: video-3;
+.hero-photo.hero-photo-video {
+  width: 140px;
+  justify-self: start;
+}
+
+.hero-video-panel .hero-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.15rem;
+}
+
+.hero-photo.hero-photo-video video {
+  box-shadow: 0 12px 28px rgba(69, 45, 28, 0.1);
+  filter: saturate(0.85) contrast(0.96);
+  opacity: 0.92;
+}
+
+.hero-photo.hero-photo-video figcaption {
+  font-size: 0.98rem;
 }
 
 .hero-photo img,
@@ -647,6 +677,11 @@ img {
   box-shadow: var(--shadow);
 }
 
+.timeline-media img.timeline-media-small {
+  max-width: 500px;
+  justify-self: start;
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
@@ -769,7 +804,7 @@ img {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-areas:
       "traveler traveler note"
-      "video-1 video-2 video-3";
+      "traveler traveler videos";
   }
 
   .hero-photo-traveler {
@@ -780,6 +815,19 @@ img {
   .hero-note {
     transform: translate(-36px, 56px);
     min-height: auto;
+  }
+
+  .hero-note-stack,
+  .hero-video-panel {
+    transform: none;
+  }
+
+  .hero-video-panel {
+    width: 100%;
+  }
+
+  .hero-video-row {
+    flex-wrap: wrap;
   }
 
   .hero {
@@ -841,9 +889,7 @@ img {
     grid-template-areas:
       "traveler"
       "note"
-      "video-1"
-      "video-2"
-      "video-3";
+      "videos";
     gap: 1.1rem;
   }
 
@@ -858,6 +904,23 @@ img {
     max-width: none;
     justify-self: stretch;
     transform: none;
+  }
+
+  .hero-video-panel {
+    justify-self: stretch;
+    transform: none;
+    width: 100%;
+  }
+
+  .hero-video-row {
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  .hero-photo.hero-photo-video {
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
   }
 
   .hero-note {
